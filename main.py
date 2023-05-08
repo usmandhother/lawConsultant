@@ -9,6 +9,7 @@ from json import JSONEncoder
 import numpy as np
 # linear algebra
 import pandas as pd
+import os
 
 # data processing, CSV file I/O (e.g. pd.read_csv)
 
@@ -153,6 +154,6 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0",debug=True, port=os.getenv("PORT", default=5000))
 
 # In[ ]:
