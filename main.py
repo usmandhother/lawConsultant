@@ -112,8 +112,8 @@ recomended_lawyer = []
 df['ID'] = df['ID'].astype(str)
 
 
-def recommend(cases):
-    index = df[df['CasesWon'] == cases].index[0]
+def recommend(yearsofexp):
+    index = df[df['YearsofExperience'] == yearsofexp].index[0]
     distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
     for i in distances[1:6]:
         global recomended_lawyer
